@@ -17,19 +17,23 @@ import random
 
 # Define ranges here
 
+startRange = 100
+endRange = 1000
+stepRange = 10
+
 def main():
-    printHeader()
+    total = 0 
     for n in range(startRange,endRange,stepRange):
-        averageDistance = getRandomWalk(n)
-        print("For {} steps, the average distance is: {}".format(n,averageDistance))
+        total += getRandomWalk(n)
+    n = endRange + stepRange / startRange
+    print("The average postion: {}".format(total))
 
-
-def printHeader():
-    print("Some informative text")
 
 def getRandomWalk(steps):
     # Calculate a random walk of given steps
-    return 0 # replace with actual average
-
+    position = 0
+    for walk in range(steps):
+        position = random.choice([position-1,position+1])
+    return position
 if __name__ == "__main__":
     main()

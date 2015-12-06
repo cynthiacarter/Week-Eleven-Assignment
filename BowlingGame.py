@@ -1,3 +1,8 @@
+# Cynthia Carter
+# CS 125
+
+#define varables
+
 class Game():
     def __init__(self):
         self._rolls = [0] * 21
